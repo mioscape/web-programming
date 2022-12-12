@@ -51,7 +51,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="https://toppng.com/uploads/preview/black-and-white-stockportable-network-account-icon-11553436383dwuayhjyvo.png" width="40" height="40" alt="Profile" class="rounded-circle">
+                        <img src="assets/profile.png" width="30" height="30" alt="Profile" class="rounded-circle">
                     </a>
                     <ul class="dropdown-menu" id="dropdownMenuAccount" aria-labelledby="navbarDropdownMenuLink">
 

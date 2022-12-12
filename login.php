@@ -67,9 +67,9 @@
 <script>
     let username = document.getElementById("username");
     let password = document.getElementById("password");
-    let storedUsername = localStorage.getItem('username');
-    let storedPassword = localStorage.getItem('password');
-    let logged = localStorage.getItem('logged');
+    let storedUsername = localStorage.getItem("username");
+    let storedPassword = localStorage.getItem("password");
+    let logged = localStorage.getItem("logged");
 
     (() => {
         'use strict'
@@ -92,7 +92,7 @@
     })()
 
     if (logged === 'true') {
-        document.getElementById("alertNotLogged").click();
+        clickById("alertNotLogged");
     }
 
     function registerForm() {
@@ -105,13 +105,13 @@
 
     function login() {
         if (logged === 'true') {
-            document.getElementById("alertNotLogged").click();
+            clickById("alertNotLogged");
         } else {
             if (username.value === storedUsername && password.value === storedPassword) {
                 localStorage.setItem('logged', 'true');
                 hrefDirect('index.php');
             } else {
-                document.getElementById("alertMissingCredential").click();
+                clickById("alertMissingCredential");
             }
         }
     }

@@ -18,24 +18,7 @@ footer {
     cursor: pointer;
 }
 
-.captcha-data {
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    font-style: italic;
-    font-weight: bold;
-    font-size: 1.7rem;
-    border-radius: 5px;
-    text-decoration: line-through;
-    color: #a0a0a0;
-    background-color: #0c0c0c;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    position: relative;
-}
-
 /* Changes by ID */
 #dropdownMenuAccount {
-    left: -80px;
+    left: -100px;
 }

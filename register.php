@@ -90,20 +90,20 @@
     })()
 
     function ifLogged() {
-        hrefDirect('index.php');
+        hrefDirect("index.php");
     }
 
     if (logged === 'true') {
-        clickById('alertNotLogged');
+        clickById("alertNotLogged");
     }
 
     function ifSuccessRegister() {
-        location.href = 'login.php';
+        hrefDirect("login.php");
     }
 
     function register() {
-        localStorage.setItem('username', username.value);
-        localStorage.setItem('password', password.value);
-        clickById('alertSuccessRegister');
+        localStorage.setItem("username", username.value);
+        localStorage.setItem("password", password.value);
+        clickById("alertSuccessRegister");
     }
 </script>
