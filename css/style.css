@@ -1,0 +1,41 @@
+/* Global CSS */
+body {
+    width: 100%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Changes by Class */
+.horizontal-bottom {
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.captcha-data {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.7rem;
+    border-radius: 5px;
+    text-decoration: line-through;
+    color: #a0a0a0;
+    background-color: #0c0c0c;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: relative;
+}
+
+/* Changes by ID */
+#dropdownMenuAccount {
+    left: -80px;
+}
