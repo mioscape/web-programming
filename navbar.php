@@ -1,19 +1,21 @@
 <?php
-    include 'function.php';
+    require 'function.php';
+
     global $navbarLink;
+
     $navbarLink = [
         ['link' => 'index.php', 'name' => 'Home', 'type' => 'single'],
         ['link' => '', 'name' => 'Produk', 'type' => 'dropdown', 'data' => [
             ['productName' => 'Produk 1', 'productLink' => 'product1.php'],
             ['productName' => 'Produk 2', 'productLink' => 'product2.php']
-            ],
+        ],
         ]
     ];
 
     $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
     $checkLogin = "<script>document.write(localStorage.getItem('logged'));</script>";
 ?>
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light border-bottom col-12">
     <div class="container-fluid flex-row">
         <a class="navbar-brand" href="index.php">Tokopaedi</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -21,11 +23,11 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav me-auto p-0">
                 <?php
                     foreach ($navbarLink as $key => $value) {
                         if ($value['type'] === 'single') {
-                        echo "<li class='nav-item'>";
+                        echo "<li class='btn btn-light nav-item'>";
                             if (($value['link']) == $curPageName) {
                                 echo "<a class='nav-link active' aria-current='page' href='".$value['link']."'>".$value['name']."</a>";
                             } else {
@@ -35,7 +37,7 @@
                         }
                         if ($value['type'] === 'dropdown')  {
                             console_log($value['data']);
-                            echo "<li class='nav-item dropdown'>";
+                            echo "<li class='btn btn-light nav-item dropdown'>";
                                 echo "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>".$value['name']."</a>";
                                 echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
                                     foreach ($value['data'] as $keyDropdown => $valueDropdown) {
@@ -49,11 +51,11 @@
                 ?>
             </ul>
             <ul class="navbar-nav">
-                <li class="nav-item dropdown">
+                <li class="btn btn-light nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src="assets/profile.png" width="30" height="30" alt="Profile" class="rounded-circle">
+                        <img src="assets/profile.png" width="25" height="25" alt="Profile" class="rounded-circle">
                     </a>
-                    <ul class="dropdown-menu" id="dropdownMenuAccount" aria-labelledby="navbarDropdownMenuLink">
+                    <ul style='right: 0;' class="dropdown-menu" id="dropdownMenuAccount" aria-labelledby="navbarDropdownMenuLink">
 
                     </ul>
                 </li>

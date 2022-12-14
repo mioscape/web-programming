@@ -1,4 +1,5 @@
 <?php
+// Berfungsi untuk mengeksekusi console.log() pada PHP menggunakan JavaScript di browser
 function console_log() {
     $args = func_get_args();
     echo '<script>';

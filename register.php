@@ -1,5 +1,5 @@
 <?php
-    include 'index.php';
+    require 'header.php';
 ?>
 
 <div class="bg-secondary bg-opacity-25 col-3 mx-auto rounded mt-5">
