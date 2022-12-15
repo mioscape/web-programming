@@ -48,4 +48,48 @@ function console_log() {
 
         return innerHTML;
     }
+
+    // Function ini berfungsi untuk mengambil parameter yang dikirimkan melalui URL
+    function filterBrand() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const brand = urlParams.get('brand')
+
+        return brand;
+    }
+
+    /**
+     * Function ini berfungsi untuk mengacak banyak array berdasarkan parameter yang dikirimkan
+     *
+     * @param {[{productDesc: string, productImage: string, productLink: string, productName: string, productPrice: string}][]} arrays - Banyak array yang ingin diacak
+     */
+    function shuffleArray(...arrays) {
+        arrays.forEach(array => {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        });
+    }
+
+    /**
+     * Function ini berfungsi untuk mangacak satu array berdasarkan parameter yang dikirimkan
+     *
+     * @param {{productDesc: string, productImage: string, productLink: string, productName: string, productPrice: string}[]} array - Satu array yang ingin diacak
+     */
+    function randomizeArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+
+    function ajaxCheckout() {
+        jQuery.ajax({
+            method: "GET",
+            url: "test.js",
+            dataType: "script",
+            data: ""
+        });
+    }
 </script>

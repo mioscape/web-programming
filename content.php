@@ -1,41 +1,48 @@
 <?php
-    global $productList;
+    global $sliderCarousel;
 
-    $productList = [
-        ['productName' => 'Produk 1', 'productLink' => 'product1.php'],
-        ['productName' => 'Produk 2', 'productLink' => 'product2.php']
+    $sliderCarousel = [
+        ['img' => 'assets/carousel/iphone.png', 'alt' => 'iPhone 14 Series Picture', 'caption' => 'iPhone 14 Series', 'captionDesc' => 'Think Different'],
+        ['img' => 'assets/carousel/samsung.png', 'alt' => 'Samsung Galaxy S22 Series Picture', 'caption' => 'Samsung Galaxy S22 Series', 'captionDesc' => 'Do what You Can`t'],
+        ['img' => 'assets/carousel/xiaomi.png', 'alt' => 'Xiaomi 12 Series Picture', 'caption' => 'Xiaomi 12 Series', 'captionDesc' => 'Just for fans'],
+        ['img' => 'assets/carousel/oppo.png', 'alt' => 'Oppo Find X5 Series Picture', 'caption' => 'Oppo Find X5 Series', 'captionDesc' => 'Briliant Potrait'],
     ];
 ?>
 <header>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
         <div class="slider-container">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <?php
+                    $i = 0;
+                    foreach ($sliderCarousel as $key => $value) {
+                        if ($i === 0) {
+                            echo "<button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='".$i."' class='active' aria-current='true' aria-label='Slide ".$i."'></button>";
+                        } else {
+                            echo "<button type='button' data-bs-target='#carouselExampleCaptions' data-bs-slide-to='".$i."' aria-label='Slide ".$i."'></button>";
+                        }
+                        $i++;
+                    }
+                ?>
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/profile.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/profile.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/profile.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                </div>
+                <?php
+                    $i = 0;
+                    foreach ($sliderCarousel as $key => $value) {
+                        console_log($value);
+                        if ($i === 0) {
+                            echo "<div class='carousel-item active'>";
+                        } else {
+                            echo "<div class='carousel-item'>";
+                        }
+                            echo "<div><a href='buy.php'><img src='".$value['img']."' class='d-block w-100' alt='".$value['alt']."'></a></div>";
+                                echo "<div class='carousel-caption d-none d-md-block'>";
+                                    echo "<h5>".$value['caption']."</h5>";
+                                    echo "<p>".$value['captionDesc']."</p>";
+                                echo "</div>";
+                        echo "</div>";
+                        $i++;
+                    }
+                ?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -49,47 +56,163 @@
     </div>
 </header>
 <main class="col-12">
-    <div class="col-12 p-5 d-flex bg-secondary justify-content-center" id="productList">
-
+    <div class="col-12 p-5 d-flex bg-secondary justify-content-center flex-wrap" id="productList">
+        <!-- productList will dynamically generate here by JavaScript -->
     </div>
 </main>
 <script>
-    const productList = [
+    let filteredBrand = filterBrand();
+
+    const iphoneList = [
         {
-            productName: 'Produk 1',
+            productName: 'iPhone 14',
             productLink: 'product1.php',
-            productImage: 'assets/profile.png'
+            productImage: 'assets/brand/iphone/14.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 1.000.000'
         },
         {
-            productName: 'Produk 2',
+            productName: 'iPhone 14 Plus',
             productLink: 'product2.php',
-            productImage: 'assets/profile.png'
-        }
+            productImage: 'assets/brand/iphone/14-plus.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 2.000.000'
+        },
+        {
+            productName: 'iPhone 14 Pro',
+            productLink: 'product3.php',
+            productImage: 'assets/brand/iphone/14-pro.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 3.000.000'
+        },
+        {
+            productName: 'iPhone 14 Pro Max',
+            productLink: 'product4.php',
+            productImage: 'assets/brand/iphone/14-pro-max.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 4.000.000'
+        },
+    ];
+
+    const samsungList = [
+        {
+            productName: 'Samsung Galaxy S22 5G',
+            productLink: 'product1.php',
+            productImage: 'assets/brand/samsung/s22.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 1.000.000'
+        },
+        {
+            productName: 'Samsung Galaxy S22+ 5G',
+            productLink: 'product2.php',
+            productImage: 'assets/brand/samsung/s22-plus.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 2.000.000'
+        },
+        {
+            productName: 'Samsung Galaxy S22 Ultra 5G',
+            productLink: 'product3.php',
+            productImage: 'assets/brand/samsung/s22-ultra.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 3.000.000'
+        },
+    ];
+
+    const xiaomiList = [
+        {
+            productName: 'Xiaomi 12 Lite',
+            productLink: 'product1.php',
+            productImage: 'assets/brand/xiaomi/12-lite.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 1.000.000'
+        },
+        {
+            productName: 'Xiaomi 12',
+            productLink: 'product2.php',
+            productImage: 'assets/brand/xiaomi/12.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 2.000.000'
+        },
+        {
+            productName: 'Xiaomi 12 Pro',
+            productLink: 'product3.php',
+            productImage: 'assets/brand/xiaomi/12-pro.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 3.000.000'
+        },
+        {
+            productName: 'Xiaomi 12S Ultra',
+            productLink: 'product4.php',
+            productImage: 'assets/brand/xiaomi/12s-ultra.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 4.000.000'
+        },
+    ];
+
+    const oppoList = [
+        {
+            productName: 'Oppo Find X5 Lite',
+            productLink: 'product1.php',
+            productImage: 'assets/brand/oppo/find-x5-lite.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 1.000.000'
+        },
+        {
+            productName: 'Oppo Find X5',
+            productLink: 'product2.php',
+            productImage: 'assets/brand/oppo/find-x5.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 2.000.000'
+        },
+        {
+            productName: 'Oppo Find X5 Pro',
+            productLink: 'product3.php',
+            productImage: 'assets/brand/oppo/find-x5-pro.jpg',
+            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productPrice: 'Rp. 3.000.000'
+        },
     ];
 
     function generateTheProductList() {
         const logged = localStorage.getItem('logged');
         let res = "";
+        let randomizedBrand = [];
 
-        productList.forEach((data) => {
+        if (filteredBrand !== null || "") {
+            if (filteredBrand === "iphone") {
+                randomizedBrand = iphoneList;
+            } else if (filteredBrand === "samsung") {
+                randomizedBrand = samsungList;
+            } else if (filteredBrand === "xiaomi") {
+                randomizedBrand = xiaomiList;
+            } else if (filteredBrand === "oppo") {
+                randomizedBrand = oppoList;
+            }
+        } else {
+            shuffleArray(iphoneList, samsungList, xiaomiList, oppoList);
+            randomizedBrand = [...iphoneList, ...samsungList, ...xiaomiList, ...oppoList];
+            randomizeArray(randomizedBrand);
+        }
+
+        randomizedBrand.forEach((data) => {
             console.log(data);
             if (logged === 'true') {
                 res = res + "<div class='card m-2' style='width: 18rem;'>";
-                res = res + "<img src=" + `${data.productImage}` + " class='card-img-top' alt='...'>";
-                res = res + "<div class='card-body'>";
-                res = res + "<h5 class='card-title'>" + `${data.productName}` + "</h5>";
-                res = res + "<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>";
-                res = res + "<a href=" + `${data.productLink}` + " class='btn btn-primary'>Go somewhere</a>";
-                res = res + "</div>";
+                    res = res + "<img src=" + `${data.productImage}` + " class='card-img-top p-2' alt=''>";
+                    res = res + "<div class='card-body'>";
+                        res = res + "<h5 class='card-title'>" + `${data.productName}` + "</h5>";
+                        res = res + "<p class='card-text'>" + `${data.productDesc}` + "</p>";
+                        res = res + "<a href=" + `${data.productLink}` + " class='btn btn-primary'>Go somewhere</a>";
+                    res = res + "</div>";
                 res = res + "</div>";
             } else {
                 res = res + "<div class='card m-2' style='width: 18rem;'>";
-                res = res + "<img src="+ `${data.productImage}` +" class='card-img-top' alt='...'>";
-                res = res + "<div class='card-body'>";
-                res = res + "<h5 class='card-title'>" + `${data.productName}` + "</h5>";
-                res = res + "<p class='card-text'>Some quick example text to build on the card title and make up the bulk of the card's content.</p>";
-                res = res + "<a class='btn btn-danger'>Login to Buy this Product</a>";
-                res = res + "</div>";
+                    res = res + "<img src="+ `${data.productImage}` +" class='card-img-top p-2' alt=''>";
+                    res = res + "<div class='card-body'>";
+                        res = res + "<h5 class='card-title'>" + `${data.productName} | ${data.productPrice}` + "</h5>";
+                        res = res + "<p class='card-text'>" + `${data.productDesc}` + "</p>";
+                        res = res + "<a href='login.php' class='btn btn-danger'>Login to buy this Product</a>";
+                    res = res + "</div>";
                 res = res + "</div>";
             }
         });
@@ -97,6 +220,8 @@
         // agar bisa di append ke HTML
         querySelectorInnerHTML('#productList', res);
     }
+
+
 
     function checkLoginContent() {
         const logged = localStorage.getItem('logged');

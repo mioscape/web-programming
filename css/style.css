@@ -1,26 +1,38 @@
 /* Global CSS */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
 body {
-    width: 100%;
+    width: 100%; /* 100% of the screen */
 }
+
 
 /* Changes by Class */
 .dropdown-item {
-    cursor: pointer;
+    cursor: pointer; /* Changes the cursor to a pointer when hovering over the dropdown item */
 }
 
 .carousel-item img {
-    max-height: 400px;
-    object-fit: cover;
+    max-height: 400px; /* Sets the max height of the carousel image to 400px */
+    object-fit: cover; /* Makes the image fit the container */
+    filter: brightness(30%);
+}
+
+.carousel-caption h5 {
+    font-size: 5.5rem; /* Sets the font size of the carousel caption to 2.5rem */
+    margin-bottom: 4rem; /* Sets the top margin of the carousel caption to 11rem */
+}
+
+.card img {
+    max-height: 250px; /* Sets the max height of the card image to 300px */
+    object-fit: contain; /* Makes the image fit the container */
 }
 
 /* Changes by ID */
 #dropdownMenuAccount {
-    left: -5rem;
+    left: -5rem; /* Moves the dropdown menu to the left by -5rem */
 }
 
 

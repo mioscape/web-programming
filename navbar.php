@@ -5,17 +5,19 @@
 
     $navbarLink = [
         ['link' => 'index.php', 'name' => 'Home', 'type' => 'single'],
-        ['link' => '', 'name' => 'Produk', 'type' => 'dropdown', 'data' => [
-            ['productName' => 'Produk 1', 'productLink' => 'product1.php'],
-            ['productName' => 'Produk 2', 'productLink' => 'product2.php']
-        ],
+        ['link' => '', 'name' => 'Brand', 'type' => 'dropdown', 'data' => [
+                ['productName' => 'iPhone', 'productLink' => 'index.php?brand=iphone'],
+                ['productName' => 'Samsung', 'productLink' => 'index.php?brand=samsung'],
+                ['productName' => 'Xiaomi', 'productLink' => 'index.php?brand=xiaomi'],
+                ['productName' => 'Oppo', 'productLink' => 'index.php?brand=oppo'],
+            ],
         ]
     ];
 
     $curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
     $checkLogin = "<script>document.write(localStorage.getItem('logged'));</script>";
 ?>
-<nav class="navbar navbar-expand-lg bg-light border-bottom col-12">
+<nav class="navbar navbar-expand-lg bg-light border-bottom col-12 sticky-top">
     <div class="container-fluid flex-row">
         <a class="navbar-brand" href="index.php">Tokopaedi</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -36,12 +38,10 @@
                             echo "</li>";
                         }
                         if ($value['type'] === 'dropdown')  {
-                            console_log($value['data']);
                             echo "<li class='btn btn-light nav-item dropdown'>";
                                 echo "<a class='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>".$value['name']."</a>";
                                 echo "<ul class='dropdown-menu' aria-labelledby='navbarDropdown'>";
                                     foreach ($value['data'] as $keyDropdown => $valueDropdown) {
-                                        console_log($valueDropdown);
                                         echo "<li><a class='dropdown-item' href='".$valueDropdown['productLink']."'>".$valueDropdown['productName']."</a></li>";
                                     }
                                 echo "</ul>";
