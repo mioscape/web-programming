@@ -53,9 +53,7 @@ function console_log() {
     function filterBrand() {
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
-        const brand = urlParams.get('brand')
-
-        return brand;
+        return urlParams.get('brand');
     }
 
     /**
@@ -84,12 +82,14 @@ function console_log() {
         }
     }
 
-    function ajaxCheckout() {
-        jQuery.ajax({
-            method: "GET",
-            url: "test.js",
-            dataType: "script",
-            data: ""
-        });
+    /**
+     * Function ini berfungsi untuk mengubah int menjadi string dengan format rupiah
+     *
+     * @param {number | string} money - Angka yang ingin diubah menjadi format mata uang IDR
+     */
+    function formatRupiah(money) {
+        return new Intl.NumberFormat('id-ID',
+            { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }
+        ).format(money);
     }
 </script>

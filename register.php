@@ -2,7 +2,7 @@
     require 'header.php';
 ?>
 
-<div class="bg-secondary bg-opacity-25 col-3 mx-auto rounded mt-5">
+<div class="bg-secondary bg-opacity-25 col-lg-3 col-md-10 col-sm-10 col-10 col-xl-3 mx-auto rounded mt-5">
     <div class="card">
         <h5 class="card-header">
             Register

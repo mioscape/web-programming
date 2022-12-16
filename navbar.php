@@ -25,7 +25,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto p-0">
+            <ul class="navbar-nav nav-fill me-auto p-0">
                 <?php
                     foreach ($navbarLink as $key => $value) {
                         if ($value['type'] === 'single') {
@@ -87,10 +87,9 @@
 <script>
     function checkLogin() {
         const logged = localStorage.getItem('logged');
+        const username = localStorage.getItem('username');
         let res = "";
         if (logged === 'true') {
-            res = res + "<li class='dropdown-item' onclick='hrefDirect(`profile.php`)'>Profile</li>";
-            res = res + "<li><hr class='dropdown-divider'></li>"
             res = res + "<li class='dropdown-item' onclick='ifLogout()'>Log Out</li>";
         } else {
             res = res + "<li class='dropdown-item' onclick='hrefDirect(`login.php`)'>Log In</li>";
