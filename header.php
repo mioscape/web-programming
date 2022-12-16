@@ -9,8 +9,6 @@
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.bundle.min.js"></script>
-        <script src="js/script.js"></script>
-        <script src="js/jquery-3.6.2.min.js"></script>
     </head>
     <?php
         require 'navbar.php';
