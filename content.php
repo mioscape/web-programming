@@ -2,13 +2,11 @@
     global $sliderCarousel;
 
     $sliderCarousel = [
-        ['img' => 'assets/carousel/iphone.png', 'alt' => 'iPhone 14 Series Picture', 'caption' => 'iPhone 14 Series', 'captionDesc' => 'Think Different'],
-        ['img' => 'assets/carousel/samsung.png', 'alt' => 'Samsung Galaxy S22 Series Picture', 'caption' => 'Samsung Galaxy S22 Series', 'captionDesc' => 'Do what You Can`t'],
-        ['img' => 'assets/carousel/xiaomi.png', 'alt' => 'Xiaomi 12 Series Picture', 'caption' => 'Xiaomi 12 Series', 'captionDesc' => 'Just for fans'],
-        ['img' => 'assets/carousel/oppo.png', 'alt' => 'Oppo Find X5 Series Picture', 'caption' => 'Oppo Find X5 Series', 'captionDesc' => 'Briliant Potrait'],
+        ['img' => 'assets/carousel/iphone.png', 'alt' => 'iPhone 14 Series Picture', 'caption' => 'iPhone 14 Series', 'captionDesc' => 'Think Different', 'category' => 'iphone'],
+        ['img' => 'assets/carousel/samsung.png', 'alt' => 'Samsung Galaxy S22 Series Picture', 'caption' => 'Samsung Galaxy S22 Series', 'captionDesc' => 'Do what You Can`t', 'category' => 'samsung'],
+        ['img' => 'assets/carousel/xiaomi.png', 'alt' => 'Xiaomi 12 Series Picture', 'caption' => 'Xiaomi 12 Series', 'captionDesc' => 'Just for fans', 'category' => 'xiaomi'],
+        ['img' => 'assets/carousel/oppo.png', 'alt' => 'Oppo Find X5 Series Picture', 'caption' => 'Oppo Find X5 Series', 'captionDesc' => 'Briliant Potrait', 'category' => 'oppo'],
     ];
-
-    console_log($sliderCarousel);
 ?>
 <header>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
@@ -30,13 +28,12 @@
                 <?php
                     $i = 0;
                     foreach ($sliderCarousel as $key => $value) {
-                        console_log($value);
                         if ($i === 0) {
                             echo "<div class='carousel-item active'>";
                         } else {
                             echo "<div class='carousel-item'>";
                         }
-                            echo "<div><a href='buy.php'><img src='".$value['img']."' class='d-block w-100' alt='".$value['alt']."'></a></div>";
+                            echo "<div><a href='index.php?brand=".$value['category']."'><img src='".$value['img']."' class='d-block w-100' alt='".$value['alt']."'></a></div>";
                                 echo "<div class='carousel-caption d-none d-md-block'>";
                                     echo "<h5>".$value['caption']."</h5>";
                                     echo "<p>".$value['captionDesc']."</p>";
@@ -69,7 +66,7 @@
         {
             productName: 'iPhone 14',
             productImage: 'assets/brand/iphone/14.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'iPhone 14 Global Version (New) ',
             productLongDesc: {
                 Body: '146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); 172 g (6.07 oz); Glass front (Corning-made glass), glass back (Corning-made glass), aluminum frame',
                 Display: 'Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak); 6.1 inches, 90.2 cm2 (~86.0% screen-to-body ratio); 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)',
@@ -87,7 +84,7 @@
         {
             productName: 'iPhone 14 Plus',
             productImage: 'assets/brand/iphone/14-plus.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'iPhone 14 Plus Global Version (New)',
             productLongDesc: {
                 Body: '146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); 172 g (6.07 oz); Glass front (Corning-made glass), glass back (Corning-made glass), aluminum frame',
                 Display: 'Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak); 6.1 inches, 90.2 cm2 (~86.0% screen-to-body ratio); 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)',
@@ -105,7 +102,7 @@
         {
             productName: 'iPhone 14 Pro',
             productImage: 'assets/brand/iphone/14-pro.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'iPhone 14 Pro Global Version (New)',
             productLongDesc: {
                 Body: '146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); 172 g (6.07 oz); Glass front (Corning-made glass), glass back (Corning-made glass), aluminum frame',
                 Display: 'Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak); 6.1 inches, 90.2 cm2 (~86.0% screen-to-body ratio); 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)',
@@ -123,7 +120,7 @@
         {
             productName: 'iPhone 14 Pro Max',
             productImage: 'assets/brand/iphone/14-pro-max.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'iPhone 14 Pro Max Global Version (New)',
             productLongDesc: {
                 Body: '146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); 172 g (6.07 oz); Glass front (Corning-made glass), glass back (Corning-made glass), aluminum frame',
                 Display: 'Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak); 6.1 inches, 90.2 cm2 (~86.0% screen-to-body ratio); 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)',
@@ -144,7 +141,7 @@
         {
             productName: 'Samsung Galaxy S22 5G',
             productImage: 'assets/brand/samsung/s22.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'Samsung Galaxy S22 5G Global Version (New)',
             productLongDesc: {
                 Body: '146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); 172 g (6.07 oz); Glass front (Corning-made glass), glass back (Corning-made glass), aluminum frame',
                 Display: 'Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak); 6.1 inches, 90.2 cm2 (~86.0% screen-to-body ratio); 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)',
@@ -162,7 +159,7 @@
         {
             productName: 'Samsung Galaxy S22+ 5G',
             productImage: 'assets/brand/samsung/s22-plus.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'Samsung Galaxy S22+ 5G Global Version (New)',
             productLongDesc: {
                 Body: '146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); 172 g (6.07 oz); Glass front (Corning-made glass), glass back (Corning-made glass), aluminum frame',
                 Display: 'Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak); 6.1 inches, 90.2 cm2 (~86.0% screen-to-body ratio); 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)',
@@ -180,7 +177,7 @@
         {
             productName: 'Samsung Galaxy S22 Ultra 5G',
             productImage: 'assets/brand/samsung/s22-ultra.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'Samsung Galaxy S22 Ultra 5G Global Version (New)',
             productLongDesc: {
                 Body: '146.7 x 71.5 x 7.8 mm (5.78 x 2.81 x 0.31 in); 172 g (6.07 oz); Glass front (Corning-made glass), glass back (Corning-made glass), aluminum frame',
                 Display: 'Super Retina XDR OLED, HDR10, Dolby Vision, 800 nits (HBM), 1200 nits (peak); 6.1 inches, 90.2 cm2 (~86.0% screen-to-body ratio); 1170 x 2532 pixels, 19.5:9 ratio (~460 ppi density)',
@@ -208,9 +205,9 @@
                 Chipset: 'Qualcomm SM7325 Snapdragon 778G 5G (6 nm): Octa-core (4x2.4 GHz Kryo 670 & 4x1.8 GHz Kryo 670); Adreno 642L.',
                 Memory: '128GB 6GB RAM, 128GB 8GB RAM, 256GB 8GB RAM; UFS 2.2.',
                 OS: 'Android 12, MIUI 13.',
-                RearCamera: 'Wide (main): 108 MP, f/1.9, 26mm, 1/1.52", 0.7µm, PDAF; Ultra wide angle: 8 MP, f/2.2, 120˚, 1/4.0", 1.12µm; Macro: 2 MP, f/2.4, 1/5.0", 1.75µm.',
+                RearCamera: 'Wide (main): 108 MP, f/1.9, 26mm, 1/1.52", 0.7µm, PDAF; Ultra wide angle: 8 MP, f/2.2, 120˚, 1/4.0", 1.12µm; Macro: 2 MP, f/2.4, 1/5.0", 1.75µm.',
                 FrontCamera: '32 MP, f/2.45, 1/2.8", AF.',
-                VideoCapture: 'Rear camera: 4K@30fps, 1080p@30/60/120fps; gyro-EIS; Front camera: 1080p@30/60fps, 720p@120fps.',
+                VideoCapture: 'Rear camera: 4K@30fps, 1080p@30/60/120fps; gyro-EIS; Front camera: 1080p@30/60fps, 720p@120fps.',
                 Battery: '4500mAh; Fast charging 67W, Quick Charge 4+, Power Delivery 3.0.',
                 Misc: 'Fingerprint reader (under display, optical); Infrared port; dual speakers; Virtual proximity sensing.',
             },
@@ -226,9 +223,9 @@
                 Chipset: 'Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm): Octa-core (1x3.00 GHz Cortex-X2 & 3x2.50 GHz Cortex-A710 & 4x1.80 GHz Cortex-A510); Adreno 730.',
                 Memory: '128GB 8GB RAM, 256GB 8GB RAM, 256GB 12GB RAM; UFS 3.1.',
                 OS: 'Android 12, MIUI 13.',
-                RearCamera: 'Wide (main): 50 MP, f/1.9, 26mm, 1/1.56", 1.0µm, PDAF, OIS; Ultra wide angle: 13 MP, f/2.4, 12mm, 123˚, 1/3.06", 1.12µm; Macro: 5 MP, 50mm, AF.',
-                FrontCamera: '32 MP, f/2.5, 26mm (wide), 0.7µm.',
-                VideoCapture: 'Rear camera: 8K@24fps (HDR10), 4K@30fps (HDR10+), 1080p@30/120/240/960fps, 720p@1920fps, gyro-EIS; Front camera: 4K@30fps (HDR10+), 1080p@30/60fps, 720p@120fps.',
+                RearCamera: 'Wide (main): 50 MP, f/1.9, 26mm, 1/1.56", 1.0µm, PDAF, OIS; Ultra wide angle: 13 MP, f/2.4, 12mm, 123˚, 1/3.06", 1.12µm; Macro: 5 MP, 50mm, AF.',
+                FrontCamera: '32 MP, f/2.5, 26mm (wide), 0.7µm.',
+                VideoCapture: 'Rear camera: 8K@24fps (HDR10), 4K@30fps (HDR10+), 1080p@30/120/240/960fps, 720p@1920fps, gyro-EIS; Front camera: 4K@30fps (HDR10+), 1080p@30/60fps, 720p@120fps.',
                 Battery: '4500mAh; Fast charging 67W, 100% in 39 min (advertised), Fast wireless charging 50W, 100% in 53 min (advertised), Reverse wireless charging 10W, Power Delivery 3.0, Quick Charge 4+.',
                 Misc: 'Fingerprint reader (under display, optical); Infrared port; Virtual proximity sensing.',
             },
@@ -244,9 +241,9 @@
                 Chipset: 'Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm): Octa-core (1x3.00 GHz Cortex-X2 & 3x2.50 GHz Cortex-A710 & 4x1.80 GHz Cortex-A510); Adreno 730.',
                 Memory: '128GB 8GB RAM, 256GB 8GB RAM, 256GB 12GB RAM; UFS 3.1.',
                 OS: 'Android 12, MIUI 13.',
-                RearCamera: 'Wide (main): 50 MP, f/1.9, 24mm, 1/1.28", 1.22µm, Dual Pixel PDAF, OIS; Ultra wide angle: 50 MP, f/2.2, 115˚; Telephoto: 50 MP, f/1.9, 48mm, PDAF, 2x optical zoom.',
-                FrontCamera: '32 MP, f/2.5, 26mm (wide), 0.7µm.',
-                VideoCapture: 'Rear camera: 8K@24fps, 4K@30/60fps, 1080p@30/60/120/240/960fps, gyro-EIS; Front camera: 1080p@30/60fps, 720p@120fps.',
+                RearCamera: 'Wide (main): 50 MP, f/1.9, 24mm, 1/1.28", 1.22µm, Dual Pixel PDAF, OIS; Ultra wide angle: 50 MP, f/2.2, 115˚; Telephoto: 50 MP, f/1.9, 48mm, PDAF, 2x optical zoom.',
+                FrontCamera: '32 MP, f/2.5, 26mm (wide), 0.7µm.',
+                VideoCapture: 'Rear camera: 8K@24fps, 4K@30/60fps, 1080p@30/60/120/240/960fps, gyro-EIS; Front camera: 1080p@30/60fps, 720p@120fps.',
                 Battery: '4600mAh; Fast charging 120W, 100% in 18 min (advertised), Fast wireless charging 50W, 100% in 42 min (advertised), Reverse wireless charging 10W, Power Delivery 3.0, Quick Charge 4+.',
                 Misc: 'Fingerprint reader (under display, optical); Infrared port; Virtual proximity sensing.',
             },
@@ -276,7 +273,7 @@
         {
             productName: 'Oppo Find X5 Lite',
             productImage: 'assets/brand/oppo/find-x5-lite.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'Oppo Find X5 Lite 5G Global Version (New)',
             productLongDesc: {
                 Body: '165.1x75.5x8.4mm, 188g; glass front (Gorilla Glass 5), glass back, aluminum frame.',
                 Display: '6.43" AMOLED, 16M colors, 90Hz, HDR10+, 800 nits (typ), 1200 nits (peak), 1080x2400px resolution, 20:9 aspect ratio, 409ppi.',
@@ -294,7 +291,7 @@
         {
             productName: 'Oppo Find X5',
             productImage: 'assets/brand/oppo/find-x5.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'Oppo Find X5 5G Global Version (New)',
             productLongDesc: {
                 Body: '165.1x75.5x8.4mm, 188g; glass front (Gorilla Glass 5), glass back, aluminum frame.',
                 Display: '6.43" AMOLED, 16M colors, 90Hz, HDR10+, 800 nits (typ), 1200 nits (peak), 1080x2400px resolution, 20:9 aspect ratio, 409ppi.',
@@ -312,7 +309,7 @@
         {
             productName: 'Oppo Find X5 Pro',
             productImage: 'assets/brand/oppo/find-x5-pro.jpg',
-            productDesc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.',
+            productDesc: 'Oppo Find X5 Pro 5G Global Version (New)',
             productLongDesc: {
                 Body: '165.1x75.5x8.4mm, 188g; glass front (Gorilla Glass 5), glass back, aluminum frame.',
                 Display: '6.43" AMOLED, 16M colors, 90Hz, HDR10+, 800 nits (typ), 1200 nits (peak), 1080x2400px resolution, 20:9 aspect ratio, 409ppi.',
